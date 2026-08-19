@@ -1,0 +1,26 @@
+# ============================================================
+# CELL 4: MULTI-CONTROLLED Z GATE
+# ============================================================
+
+def apply_multi_controlled_z(qc):
+    """
+    Apply an n-qubit multi-controlled Z operation.
+
+    The last qubit is used as the target.
+    """
+
+    n = qc.num_qubits
+
+    if n == 1:
+        qc.z(0)
+        return
+
+    controls = list(range(n - 1))
+    target = n - 1
+
+    qc.h(target)
+    qc.append(
+        MCXGate(n - 1),
+        controls + [target]
+    )
+    qc.h(target)
