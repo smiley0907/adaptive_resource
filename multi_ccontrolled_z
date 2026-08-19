@@ -1,5 +1,7 @@
 # ============================================================
-# CELL 4: MULTI-CONTROLLED Z GATE
+# CELL 4: MULTI-CONTROLLED Z GATE  
+# Qiskit represents multi-controlled operations as higher-level 
+# circuit instructions and can synthesize them during transpilation.
 # ============================================================
 
 def apply_multi_controlled_z(qc):
